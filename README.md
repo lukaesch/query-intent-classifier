@@ -2,10 +2,10 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Accuracy: 99.1%](https://img.shields.io/badge/accuracy-99.1%25-brightgreen.svg)]()
+[![Accuracy: 97.6%](https://img.shields.io/badge/accuracy-97.6%25-brightgreen.svg)]()
 [![Model Size: 9.6KB](https://img.shields.io/badge/model%20size-9.6KB-blue.svg)]()
 
-A tiny, multilingual classifier that detects whether a search query is a **natural language question** or a **keyword search**. Works in 50+ languages with 99.1% accuracy.
+A tiny, multilingual classifier that detects whether a search query is a **natural language question** or a **keyword search**. Works in 50+ languages with 97.6% accuracy.
 
 **[Live Demo](https://lukaesch.github.io/query-intent-classifier/)** | **[Blog Post](#)**
 
@@ -22,7 +22,7 @@ This classifier detects intent with **zero additional latency** by reusing embed
 
 ## Features
 
-- **99.1% accuracy** on held-out test set
+- **97.6% accuracy** on held-out test set
 - **9.6 KB model** - just 384 weights + bias
 - **50+ languages** supported (inherits from multilingual embeddings)
 - **Zero latency overhead** - reuses existing query embeddings
@@ -177,7 +177,7 @@ python train_classifier.py
 | Output | Binary (question/keyword) |
 | Parameters | 385 (384 weights + 1 bias) |
 | Model size | 9.6 KB (JSON) |
-| Accuracy | 99.1% |
+| Accuracy | 97.6% |
 | Precision (question) | 0.98 |
 | Recall (question) | 1.00 |
 
