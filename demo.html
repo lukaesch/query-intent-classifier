@@ -43,7 +43,7 @@
                 or a <span class="text-indigo-400 font-semibold">keyword search</span>
             </p>
             <p class="text-gray-500 text-sm">
-                Works in 50+ languages • 99.1% accuracy • 9.6 KB model
+                Works in 50+ languages • 97.6% accuracy • 9.6 KB model
             </p>
         </header>
 
@@ -287,6 +287,7 @@
 
         // Load full model for custom queries
         window.loadFullModel = async function() {
+            console.log('[DEBUG] loadFullModel called. modelLoading:', modelLoading, 'modelLoaded:', modelLoaded);
             if (modelLoading || modelLoaded) return;
 
             modelLoading = true;
@@ -297,34 +298,44 @@
             loadBtn.classList.add('hidden');
 
             try {
+                console.log('[DEBUG] Importing Transformers.js...');
                 // Dynamic import of Transformers.js
                 const { pipeline: pipelineFn } = await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.1');
+                console.log('[DEBUG] Transformers.js imported successfully');
 
                 statusText.textContent = 'Initializing embedding model...';
 
                 // Load the feature extraction pipeline
+                console.log('[DEBUG] Loading feature-extraction pipeline...');
                 pipeline = await pipelineFn('feature-extraction', 'Xenova/paraphrase-multilingual-MiniLM-L12-v2', {
                     quantized: true,
                     progress_callback: (progress) => {
                         if (progress.status === 'downloading') {
                             const pct = Math.round((progress.loaded / progress.total) * 100);
                             statusText.textContent = `Downloading model: ${pct}%`;
+                            console.log('[DEBUG] Download progress:', pct + '%');
                         }
                     }
                 });
+                console.log('[DEBUG] Pipeline loaded successfully');
 
                 // Load classifier weights
+                console.log('[DEBUG] Fetching model_weights.json...');
                 const weightsResponse = await fetch('model_weights.json');
+                if (!weightsResponse.ok) {
+                    throw new Error(`Failed to load weights: ${weightsResponse.status} ${weightsResponse.statusText}`);
+                }
                 const weightsData = await weightsResponse.json();
                 modelWeights = weightsData.weights;
                 modelBias = weightsData.bias;
+                console.log('[DEBUG] Weights loaded. Bias:', modelBias, 'Weights length:', modelWeights.length);
 
                 modelLoaded = true;
                 statusText.textContent = '✅ Model loaded! Enter any query to classify.';
                 statusText.className = 'mt-6 text-center text-sm text-green-400';
 
             } catch (error) {
-                console.error('Failed to load model:', error);
+                console.error('[DEBUG] Failed to load model:', error);
                 statusText.textContent = '❌ Failed to load model. Using pre-computed examples only.';
                 loadBtn.classList.remove('hidden');
                 modelLoading = false;
@@ -334,6 +345,7 @@
         // Classify custom query
         window.classifyQuery = async function() {
             const query = document.getElementById('query-input').value.trim();
+            console.log('[DEBUG] Classifying query:', query);
             if (!query) return;
 
             // Check if query matches a pre-computed example
@@ -341,9 +353,12 @@
             const match = allExamples.find(ex => ex.query.toLowerCase() === query.toLowerCase());
 
             if (match) {
+                console.log('[DEBUG] Found pre-computed match:', match);
                 displayResult(match.score);
                 return;
             }
+
+            console.log('[DEBUG] No pre-computed match, need model. modelLoaded:', modelLoaded, 'modelLoading:', modelLoading);
 
             // Need full model for custom queries
             if (!modelLoaded) {
@@ -351,7 +366,10 @@
                     document.getElementById('status-text').textContent = 'Loading model for custom queries...';
                     await loadFullModel();
                 }
-                if (!modelLoaded) return;
+                if (!modelLoaded) {
+                    console.log('[DEBUG] Model failed to load');
+                    return;
+                }
             }
 
             // Show loading state
@@ -364,23 +382,27 @@
             spinner.classList.remove('hidden');
 
             try {
+                console.log('[DEBUG] Generating embedding...');
                 // Generate embedding
                 const output = await pipeline(query, { pooling: 'mean', normalize: true });
                 const embedding = Array.from(output.data);
+                console.log('[DEBUG] Embedding generated, length:', embedding.length);
 
                 // Classify using dot product
                 let score = modelBias;
                 for (let i = 0; i < modelWeights.length; i++) {
                     score += embedding[i] * modelWeights[i];
                 }
+                console.log('[DEBUG] Raw score:', score);
 
                 // Convert to probability using sigmoid
                 const probability = 1 / (1 + Math.exp(-score));
+                console.log('[DEBUG] Probability:', probability, '| Intent:', probability > 0.5 ? 'question' : 'keyword');
 
                 displayResult(probability);
 
             } catch (error) {
-                console.error('Classification failed:', error);
+                console.error('[DEBUG] Classification failed:', error);
                 document.getElementById('status-text').textContent = '❌ Classification failed: ' + error.message;
             } finally {
                 btn.disabled = false;
