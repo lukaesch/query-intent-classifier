@@ -294,7 +294,7 @@
             const statusText = document.getElementById('status-text');
             const loadBtn = document.getElementById('load-model-btn');
 
-            statusText.textContent = 'Loading model (120MB)... This may take a moment.';
+            statusText.textContent = 'Loading model (~450MB)... This may take a moment.';
             loadBtn.classList.add('hidden');
 
             try {
@@ -305,10 +305,10 @@
 
                 statusText.textContent = 'Initializing embedding model...';
 
-                // Load the feature extraction pipeline
+                // Load the feature extraction pipeline (full precision to match server)
                 console.log('[DEBUG] Loading feature-extraction pipeline...');
                 pipeline = await pipelineFn('feature-extraction', 'Xenova/paraphrase-multilingual-MiniLM-L12-v2', {
-                    quantized: true,
+                    quantized: false,
                     progress_callback: (progress) => {
                         if (progress.status === 'downloading') {
                             const pct = Math.round((progress.loaded / progress.total) * 100);
