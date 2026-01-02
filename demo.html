@@ -300,8 +300,13 @@
             try {
                 console.log('[DEBUG] Importing Transformers.js...');
                 // Dynamic import of Transformers.js
-                const { pipeline: pipelineFn } = await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.1');
+                const { pipeline: pipelineFn, env } = await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.1');
                 console.log('[DEBUG] Transformers.js imported successfully');
+
+                // Force loading from Hugging Face hub, not local
+                env.allowLocalModels = false;
+                env.useBrowserCache = true;
+                console.log('[DEBUG] Configured to load from HuggingFace hub');
 
                 statusText.textContent = 'Initializing embedding model...';
 
@@ -309,6 +314,7 @@
                 console.log('[DEBUG] Loading feature-extraction pipeline...');
                 pipeline = await pipelineFn('feature-extraction', 'Xenova/paraphrase-multilingual-MiniLM-L12-v2', {
                     quantized: false,
+                    revision: 'main',
                     progress_callback: (progress) => {
                         if (progress.status === 'downloading') {
                             const pct = Math.round((progress.loaded / progress.total) * 100);
