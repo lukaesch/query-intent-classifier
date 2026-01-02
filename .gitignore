@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv/
+
+# Generated data (large files)
+*_embeddings.json
+*_X.npy
+*_y.npy
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keep these (small, needed for the project)
+# model_weights.json
+# train_data.json
+# test_data.json

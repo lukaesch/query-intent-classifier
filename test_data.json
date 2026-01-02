@@ -1,0 +1,1400 @@
+[
+  {
+    "query": "Perché marketing è importante?",
+    "label": "question",
+    "lang": "it",
+    "source": "synthetic"
+  },
+  {
+    "query": "Self obsessed",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "\"coding\" AND \"AI\"",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "productivity NOT NFT",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "In the late night linux podcasts hosts talk about their backup strtegies and products and tools they use for this. Can you list the tools that they recommend?",
+    "label": "question",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "fundraising을 시작하는 방법은?",
+    "label": "question",
+    "lang": "ko",
+    "source": "synthetic"
+  },
+  {
+    "query": "Warum ist AGI wichtig?",
+    "label": "question",
+    "lang": "de",
+    "source": "synthetic"
+  },
+  {
+    "query": "누가 technology을 발명했나요?",
+    "label": "question",
+    "lang": "ko",
+    "source": "synthetic"
+  },
+  {
+    "query": "What is Trumps foreign policy?",
+    "label": "question",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "sustainability OR biology",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Vanta",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "value based care AND economy",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "deep learning podcast",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "top time management episodes",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "teddybär baywatch berlin",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "\"Russell Brand\"",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Где я могу изучить history?",
+    "label": "question",
+    "lang": "ru",
+    "source": "synthetic"
+  },
+  {
+    "query": "social media news",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "https://www.instagram.com/p/DScbrkQCYVO/",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Amodei",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "science episode",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "我在哪里可以学习physics?",
+    "label": "question",
+    "lang": "zh",
+    "source": "synthetic"
+  },
+  {
+    "query": "web development",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "누가 AI을 발명했나요?",
+    "label": "question",
+    "lang": "ko",
+    "source": "synthetic"
+  },
+  {
+    "query": "O que é history?",
+    "label": "question",
+    "lang": "pt",
+    "source": "synthetic"
+  },
+  {
+    "query": "Sam Altman",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "stock market 2026",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Ich möchte podcast verstehen",
+    "label": "question",
+    "lang": "de",
+    "source": "synthetic"
+  },
+  {
+    "query": "Peter Thiel interview",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "breaking news viral trending",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Dove posso imparare bitcoin?",
+    "label": "question",
+    "lang": "it",
+    "source": "synthetic"
+  },
+  {
+    "query": "scienceはいつ始まりましたか?",
+    "label": "question",
+    "lang": "ja",
+    "source": "synthetic"
+  },
+  {
+    "query": "¿Por qué es importante music?",
+    "label": "question",
+    "lang": "es",
+    "source": "synthetic"
+  },
+  {
+    "query": "ai agents",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "decision intelligence",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Day in the life",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "\"startup\" AND \"healthcare\"",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "SEO NOT investing",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Czy możesz wyjaśnić GPT?",
+    "label": "question",
+    "lang": "pl",
+    "source": "synthetic"
+  },
+  {
+    "query": "Andrew Huberman on artificial intelligence",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Wann hat renewable energy begonnen?",
+    "label": "question",
+    "lang": "de",
+    "source": "synthetic"
+  },
+  {
+    "query": "Qui a inventé productivity?",
+    "label": "question",
+    "lang": "fr",
+    "source": "synthetic"
+  },
+  {
+    "query": "personal finance interview",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "ML -spam",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "best economics podcasts",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "social media top",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Wer hat audio erfunden?",
+    "label": "question",
+    "lang": "de",
+    "source": "synthetic"
+  },
+  {
+    "query": "science이란 무엇인가요?",
+    "label": "question",
+    "lang": "ko",
+    "source": "synthetic"
+  },
+  {
+    "query": "Satya Nadella on entrepreneurship",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "fitness vs health",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "SEO time management",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "podcast venture capital",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "macgadka",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Warum ist chemistry wichtig?",
+    "label": "question",
+    "lang": "de",
+    "source": "synthetic"
+  },
+  {
+    "query": "Czy możesz wyjaśnić economics?",
+    "label": "question",
+    "lang": "pl",
+    "source": "synthetic"
+  },
+  {
+    "query": "grok 4.2",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Marc Andreessen podcast",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Comment fonctionne nutrition?",
+    "label": "question",
+    "lang": "fr",
+    "source": "synthetic"
+  },
+  {
+    "query": "Можешь объяснить machine learning?",
+    "label": "question",
+    "lang": "ru",
+    "source": "synthetic"
+  },
+  {
+    "query": "generalist specialist AI human integrator future work",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "healthcareについて教えてください",
+    "label": "question",
+    "lang": "ja",
+    "source": "synthetic"
+  },
+  {
+    "query": "musk diagnosis",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Brené Brown on SEO",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "ثمانية",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "technology podcast",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "trump -musk",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "best marketing podcasts",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "klebsiella",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "\"renewable energy\" AND \"NFT\"",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "ML이란 무엇인가요?",
+    "label": "question",
+    "lang": "ko",
+    "source": "synthetic"
+  },
+  {
+    "query": "biology NOT ML",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "best technology podcasts",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Cassie Kozyrkov talks about investing",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "workflow automation news",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "ai NOT chatgpt",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "stock market review",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Can philosophy help with programming?",
+    "label": "question",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "cryptocurrency news",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Quando è iniziato sustainability?",
+    "label": "question",
+    "lang": "it",
+    "source": "synthetic"
+  },
+  {
+    "query": "Где я могу изучить science?",
+    "label": "question",
+    "lang": "ru",
+    "source": "synthetic"
+  },
+  {
+    "query": "Mark Zuckerberg talks about health",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "¿Cómo empiezo con fitness?",
+    "label": "question",
+    "lang": "es",
+    "source": "synthetic"
+  },
+  {
+    "query": "neural networks OR grok",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "strategy calls",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "diabetes",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "¿Por qué es importante renewable energy?",
+    "label": "question",
+    "lang": "es",
+    "source": "synthetic"
+  },
+  {
+    "query": "\"NFT\"",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "\"SEO\"",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Jensen Huang interview",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "content creation",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "cryptocurrencyを説明してくれますか?",
+    "label": "question",
+    "lang": "ja",
+    "source": "synthetic"
+  },
+  {
+    "query": "marketについて教えてください",
+    "label": "question",
+    "lang": "ja",
+    "source": "synthetic"
+  },
+  {
+    "query": "\"agent workflow\" AND \"problem solving\"",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "value based careの始め方は?",
+    "label": "question",
+    "lang": "ja",
+    "source": "synthetic"
+  },
+  {
+    "query": "Wo kann ich content creation lernen?",
+    "label": "question",
+    "lang": "de",
+    "source": "synthetic"
+  },
+  {
+    "query": "Como começar com startup?",
+    "label": "question",
+    "lang": "pt",
+    "source": "synthetic"
+  },
+  {
+    "query": "Fest und Flauschig",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "content creationをどこで学べますか?",
+    "label": "question",
+    "lang": "ja",
+    "source": "synthetic"
+  },
+  {
+    "query": "Elon Musk trump",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Peter Thiel music",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Which meditation is best?",
+    "label": "question",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Когда началось renewable energy?",
+    "label": "question",
+    "lang": "ru",
+    "source": "synthetic"
+  },
+  {
+    "query": "personal finance news",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Come funziona workflow automation?",
+    "label": "question",
+    "lang": "it",
+    "source": "synthetic"
+  },
+  {
+    "query": "Dr. Cal Newport: How to Enhance Focus and Improve Productivity",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Is there a connection between venture capital and web development?",
+    "label": "question",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "investing top",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "market vs coding",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "ML AND audio",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "bitcoin OR politics",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Как начать с LLM?",
+    "label": "question",
+    "lang": "ru",
+    "source": "synthetic"
+  },
+  {
+    "query": "Wie fange ich mit radiology an?",
+    "label": "question",
+    "lang": "de",
+    "source": "synthetic"
+  },
+  {
+    "query": "ML OR web development",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Kto wynalazł machine learning?",
+    "label": "question",
+    "lang": "pl",
+    "source": "synthetic"
+  },
+  {
+    "query": "How does LLM work?",
+    "label": "question",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "AI radiology imaging cancer diagnosis deep learning",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Comment fonctionne healthcare?",
+    "label": "question",
+    "lang": "fr",
+    "source": "synthetic"
+  },
+  {
+    "query": "AI 2025",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "philosophy에 대해 알려주세요",
+    "label": "question",
+    "lang": "ko",
+    "source": "synthetic"
+  },
+  {
+    "query": "fitness AND fundraising",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "health healthcare",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "\"ai orchestration\" AND agents",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Claude interview",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "renewable energy如何工作?",
+    "label": "question",
+    "lang": "zh",
+    "source": "synthetic"
+  },
+  {
+    "query": "\"blockchain\" AND \"healthcare\"",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "¿Cómo funciona nutrition?",
+    "label": "question",
+    "lang": "es",
+    "source": "synthetic"
+  },
+  {
+    "query": "real estate episode",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "philosophy best",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Quels sont les avantages de AI?",
+    "label": "question",
+    "lang": "fr",
+    "source": "synthetic"
+  },
+  {
+    "query": "business 2026",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "blockchain의 장점은 무엇인가요?",
+    "label": "question",
+    "lang": "ko",
+    "source": "synthetic"
+  },
+  {
+    "query": "Qu'est-ce que technology?",
+    "label": "question",
+    "lang": "fr",
+    "source": "synthetic"
+  },
+  {
+    "query": "왜 biology이 중요한가요?",
+    "label": "question",
+    "lang": "ko",
+    "source": "synthetic"
+  },
+  {
+    "query": "Peter Thiel interview",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "finance diagnosis",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Voglio capire diagnosis",
+    "label": "question",
+    "lang": "it",
+    "source": "synthetic"
+  },
+  {
+    "query": "\"cassie kozyrkov\"",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Quels sont les avantages de meditation?",
+    "label": "question",
+    "lang": "fr",
+    "source": "synthetic"
+  },
+  {
+    "query": "Qu'est-ce que cryptocurrency?",
+    "label": "question",
+    "lang": "fr",
+    "source": "synthetic"
+  },
+  {
+    "query": "stock market NOT AI",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "leadership future predictions",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "interview conversation shocking surprising",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "grok interview",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "¿Dónde puedo aprender LLM?",
+    "label": "question",
+    "lang": "es",
+    "source": "synthetic"
+  },
+  {
+    "query": "Can you explain economy?",
+    "label": "question",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Me conte sobre astronomy",
+    "label": "question",
+    "lang": "pt",
+    "source": "synthetic"
+  },
+  {
+    "query": "best GPT podcasts",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Marc Chartrand",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "social mediaについて教えてください",
+    "label": "question",
+    "lang": "ja",
+    "source": "synthetic"
+  },
+  {
+    "query": "astronomy OR remote work",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Pode explicar meditation?",
+    "label": "question",
+    "lang": "pt",
+    "source": "synthetic"
+  },
+  {
+    "query": "Reid Hoffman talks about technology",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Naval Ravikant on ML",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Satya Nadella content creation",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Quali sono i vantaggi di chemistry?",
+    "label": "question",
+    "lang": "it",
+    "source": "synthetic"
+  },
+  {
+    "query": "AI top",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Quels sont les avantages de fitness?",
+    "label": "question",
+    "lang": "fr",
+    "source": "synthetic"
+  },
+  {
+    "query": "Waar kan ik history leren?",
+    "label": "question",
+    "lang": "nl",
+    "source": "synthetic"
+  },
+  {
+    "query": "Wie fange ich mit astronomy an?",
+    "label": "question",
+    "lang": "de",
+    "source": "synthetic"
+  },
+  {
+    "query": "social media news",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "¿Quién inventó finance?",
+    "label": "question",
+    "lang": "es",
+    "source": "synthetic"
+  },
+  {
+    "query": "kokosnus",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "meditation future predictions",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "programming NOT politics",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "investing news",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "誰がdiagnosisを発明しましたか?",
+    "label": "question",
+    "lang": "ja",
+    "source": "synthetic"
+  },
+  {
+    "query": "Pode explicar finance?",
+    "label": "question",
+    "lang": "pt",
+    "source": "synthetic"
+  },
+  {
+    "query": "Какой decision intelligence лучше?",
+    "label": "question",
+    "lang": "ru",
+    "source": "synthetic"
+  },
+  {
+    "query": "sustainability episode",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "health 2026",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Ease Up",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Howard Lerman billion dollar company AI agents",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Warum ist neural networks wichtig?",
+    "label": "question",
+    "lang": "de",
+    "source": "synthetic"
+  },
+  {
+    "query": "mobile apps diagnosis",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Donald Trump podcast",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "technology review",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Joe Rogan aliens",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Wer hat ai agents erfunden?",
+    "label": "question",
+    "lang": "de",
+    "source": "synthetic"
+  },
+  {
+    "query": "physics diagnosis",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "teen",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Erzähl mir von audio",
+    "label": "question",
+    "lang": "de",
+    "source": "synthetic"
+  },
+  {
+    "query": "어떤 AGI이 가장 좋나요?",
+    "label": "question",
+    "lang": "ko",
+    "source": "synthetic"
+  },
+  {
+    "query": "¿Cómo empiezo con NFT?",
+    "label": "question",
+    "lang": "es",
+    "source": "synthetic"
+  },
+  {
+    "query": "What's Elon Musk favorite dish?",
+    "label": "question",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "top market episodes",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "What do experts say about startup?",
+    "label": "question",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "What is healthy food?",
+    "label": "question",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Kun je podcast uitleggen?",
+    "label": "question",
+    "lang": "nl",
+    "source": "synthetic"
+  },
+  {
+    "query": "renewable energy interview",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Quando programming começou?",
+    "label": "question",
+    "lang": "pt",
+    "source": "synthetic"
+  },
+  {
+    "query": "如何开始学习economy?",
+    "label": "question",
+    "lang": "zh",
+    "source": "synthetic"
+  },
+  {
+    "query": "Christmas holiday 2025",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Andrew Huberman",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "bishu",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Wer hat web development erfunden?",
+    "label": "question",
+    "lang": "de",
+    "source": "synthetic"
+  },
+  {
+    "query": "Je veux comprendre value based care",
+    "label": "question",
+    "lang": "fr",
+    "source": "synthetic"
+  },
+  {
+    "query": "climate change episode",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "politics 2024",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "tech 2026",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "\"workflow\" AND \"problem solving\"",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Como começar com podcast?",
+    "label": "question",
+    "lang": "pt",
+    "source": "synthetic"
+  },
+  {
+    "query": "どのartificial intelligenceが一番いいですか?",
+    "label": "question",
+    "lang": "ja",
+    "source": "synthetic"
+  },
+  {
+    "query": "\"diagnosis\" AND \"fundraising\"",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Jak działa SEO?",
+    "label": "question",
+    "lang": "pl",
+    "source": "synthetic"
+  },
+  {
+    "query": "OpenAI",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "Quiero entender sustainability",
+    "label": "question",
+    "lang": "es",
+    "source": "synthetic"
+  },
+  {
+    "query": "\"investing\"",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "\"OpenAI\" AND \"diagnosis\"",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Tony Robbins podcast",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "personal finance best",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Quale machine learning è migliore?",
+    "label": "question",
+    "lang": "it",
+    "source": "synthetic"
+  },
+  {
+    "query": "electric vehicles vs productivity",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "neural networksを説明してくれますか?",
+    "label": "question",
+    "lang": "ja",
+    "source": "synthetic"
+  },
+  {
+    "query": "Peux-tu expliquer renewable energy?",
+    "label": "question",
+    "lang": "fr",
+    "source": "synthetic"
+  },
+  {
+    "query": "¿Cómo empiezo con finance?",
+    "label": "question",
+    "lang": "es",
+    "source": "synthetic"
+  },
+  {
+    "query": "What are the AI trends in 2025?",
+    "label": "question",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "\"workflow automation\"",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Почему SEO важен?",
+    "label": "question",
+    "lang": "ru",
+    "source": "synthetic"
+  },
+  {
+    "query": "Quem inventou social media?",
+    "label": "question",
+    "lang": "pt",
+    "source": "synthetic"
+  },
+  {
+    "query": "top programming episodes",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Ben Shapiro podcast",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "\"science\"",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Can neural networks help with radiology?",
+    "label": "question",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "meditation -spam",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "remote work review",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "artificial intelligence podcast",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "你能解释LLM吗?",
+    "label": "question",
+    "lang": "zh",
+    "source": "synthetic"
+  },
+  {
+    "query": "Marc Andreessen talks about blockchain",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "podcastの利点は何ですか?",
+    "label": "question",
+    "lang": "ja",
+    "source": "synthetic"
+  },
+  {
+    "query": "healthcare AI diagnosis",
+    "label": "keyword",
+    "lang": "real",
+    "source": "production"
+  },
+  {
+    "query": "mobile apps是什么?",
+    "label": "question",
+    "lang": "zh",
+    "source": "synthetic"
+  },
+  {
+    "query": "mobile apps news",
+    "label": "keyword",
+    "lang": "en",
+    "source": "synthetic"
+  },
+  {
+    "query": "Was ist time management?",
+    "label": "question",
+    "lang": "de",
+    "source": "synthetic"
+  }
+]
