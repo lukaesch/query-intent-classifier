@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Intent Classifier - Live Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .question-tag { background: #10b981; }
+        .keyword-tag { background: #6366f1; }
+        .loading-spinner {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #10b981;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .confidence-bar {
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen text-white">
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">Query Intent Classifier</h1>
+            <p class="text-gray-400 text-lg mb-2">
+                Detect if a search query is a <span class="text-green-400 font-semibold">natural language question</span>
+                or a <span class="text-indigo-400 font-semibold">keyword search</span>
+            </p>
+            <p class="text-gray-500 text-sm">
+                Works in 50+ languages • 99.1% accuracy • 9.6 KB model
+            </p>
+        </header>
+
+        <!-- Main Demo Card -->
+        <div class="card rounded-2xl p-8 mb-8">
+            <div class="mb-6">
+                <label class="block text-gray-400 text-sm mb-2">Enter a search query</label>
+                <div class="flex gap-3">
+                    <input
+                        type="text"
+                        id="query-input"
+                        placeholder="e.g., What are the AI trends in 2026?"
+                        class="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-colors"
+                    >
+                    <button
+                        id="classify-btn"
+                        onclick="classifyQuery()"
+                        class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
+                    >
+                        <span id="btn-text">Classify</span>
+                        <div id="btn-spinner" class="loading-spinner hidden"></div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Display -->
+            <div id="result-container" class="hidden">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span id="result-tag" class="px-3 py-1 rounded-full text-sm font-semibold"></span>
+                        <span id="result-label" class="text-xl font-semibold"></span>
+                    </div>
+                    <span id="result-confidence" class="text-gray-400"></span>
+                </div>
+                <div class="bg-gray-800 rounded-full h-2 overflow-hidden">
+                    <div id="confidence-bar" class="confidence-bar h-full bg-green-500"></div>
+                </div>
+                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                    <span>Keyword</span>
+                    <span>Question</span>
+                </div>
+            </div>
+
+            <!-- Model Status -->
+            <div id="model-status" class="mt-6 text-center text-sm text-gray-500">
+                <span id="status-text">Using pre-computed examples</span>
+                <button id="load-model-btn" onclick="loadFullModel()" class="ml-2 text-green-400 hover:text-green-300 underline">
+                    Load full model for custom queries
+                </button>
+            </div>
+        </div>
+
+        <!-- Pre-computed Examples -->
+        <div class="card rounded-2xl p-8 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Try These Examples</h2>
+            <p class="text-gray-400 text-sm mb-4">Click any example to see instant classification (pre-computed)</p>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                <!-- Questions -->
+                <div>
+                    <h3 class="text-green-400 font-semibold mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+                        Questions
+                    </h3>
+                    <div class="space-y-2" id="question-examples"></div>
+                </div>
+
+                <!-- Keywords -->
+                <div>
+                    <h3 class="text-indigo-400 font-semibold mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-indigo-400 rounded-full"></span>
+                        Keywords
+                    </h3>
+                    <div class="space-y-2" id="keyword-examples"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Multilingual Examples -->
+        <div class="card rounded-2xl p-8 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Works in 50+ Languages</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3" id="multilingual-examples"></div>
+        </div>
+
+        <!-- How It Works -->
+        <div class="card rounded-2xl p-8 mb-8">
+            <h2 class="text-xl font-semibold mb-4">How It Works</h2>
+            <div class="space-y-4 text-gray-300">
+                <div class="flex gap-4">
+                    <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">1</div>
+                    <div>
+                        <h3 class="font-semibold">Generate Embedding</h3>
+                        <p class="text-gray-400 text-sm">Query is converted to a 384-dimensional vector using a multilingual sentence transformer</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">2</div>
+                    <div>
+                        <h3 class="font-semibold">Linear Classification</h3>
+                        <p class="text-gray-400 text-sm">A tiny classifier (384 weights + bias) computes: score = dot(embedding, weights) + bias</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">3</div>
+                    <div>
+                        <h3 class="font-semibold">Intent Decision</h3>
+                        <p class="text-gray-400 text-sm">If score > 0 → Question (natural language). If score ≤ 0 → Keyword search.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm">
+            <p class="mb-2">
+                Open source on <a href="https://github.com/lukaesch/query-intent-classifier" class="text-green-400 hover:text-green-300">GitHub</a>
+            </p>
+            <p>
+                Used in production by <a href="https://audioscrape.com" class="text-green-400 hover:text-green-300">audioscrape.com</a>
+            </p>
+        </footer>
+    </div>
+
+    <script type="module">
+        // Pre-computed examples with embeddings and scores
+        const EXAMPLES = {
+            questions: [
+                { query: "What are the AI trends in 2026?", score: 0.94, lang: "en" },
+                { query: "How does machine learning work?", score: 0.97, lang: "en" },
+                { query: "Why is Bitcoin valuable?", score: 0.91, lang: "en" },
+                { query: "Can you explain neural networks?", score: 0.96, lang: "en" },
+                { query: "What should I know about investing?", score: 0.89, lang: "en" },
+                { query: "Is remote work here to stay?", score: 0.85, lang: "en" },
+                { query: "Tell me about climate change", score: 0.82, lang: "en" },
+                { query: "How do I get started with Python?", score: 0.95, lang: "en" },
+            ],
+            keywords: [
+                { query: "Elon Musk interview", score: 0.08, lang: "en" },
+                { query: "Joe Rogan podcast", score: 0.05, lang: "en" },
+                { query: "bitcoin 2024", score: 0.12, lang: "en" },
+                { query: "Sam Altman OpenAI", score: 0.07, lang: "en" },
+                { query: "\"artificial intelligence\"", score: 0.03, lang: "en" },
+                { query: "startup AND fundraising", score: 0.11, lang: "en" },
+                { query: "best productivity podcasts", score: 0.22, lang: "en" },
+                { query: "Tesla stock analysis", score: 0.15, lang: "en" },
+            ],
+            multilingual: [
+                { query: "Was ist künstliche Intelligenz?", score: 0.93, lang: "German" },
+                { query: "¿Cómo funciona el blockchain?", score: 0.94, lang: "Spanish" },
+                { query: "Qu'est-ce que le machine learning?", score: 0.92, lang: "French" },
+                { query: "人工知能とは何ですか?", score: 0.91, lang: "Japanese" },
+                { query: "인공지능이란 무엇인가요?", score: 0.90, lang: "Korean" },
+                { query: "O que é inteligência artificial?", score: 0.93, lang: "Portuguese" },
+                { query: "Что такое нейронные сети?", score: 0.89, lang: "Russian" },
+                { query: "人工智能是什么?", score: 0.88, lang: "Chinese" },
+                { query: "Jak działa uczenie maszynowe?", score: 0.91, lang: "Polish" },
+            ]
+        };
+
+        // Model weights (loaded from JSON or embedded)
+        let modelWeights = null;
+        let modelBias = null;
+        let pipeline = null;
+        let modelLoaded = false;
+        let modelLoading = false;
+
+        // Initialize examples
+        function initExamples() {
+            const questionContainer = document.getElementById('question-examples');
+            const keywordContainer = document.getElementById('keyword-examples');
+            const multilingualContainer = document.getElementById('multilingual-examples');
+
+            EXAMPLES.questions.forEach(ex => {
+                questionContainer.innerHTML += createExampleButton(ex, 'question');
+            });
+
+            EXAMPLES.keywords.forEach(ex => {
+                keywordContainer.innerHTML += createExampleButton(ex, 'keyword');
+            });
+
+            EXAMPLES.multilingual.forEach(ex => {
+                multilingualContainer.innerHTML += `
+                    <button onclick="showPrecomputedResult('${escapeHtml(ex.query)}', ${ex.score})"
+                            class="text-left p-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors">
+                        <div class="text-xs text-gray-500 mb-1">${ex.lang}</div>
+                        <div class="text-sm">${escapeHtml(ex.query)}</div>
+                    </button>
+                `;
+            });
+        }
+
+        function createExampleButton(ex, type) {
+            return `
+                <button onclick="showPrecomputedResult('${escapeHtml(ex.query)}', ${ex.score})"
+                        class="w-full text-left p-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-sm">
+                    ${escapeHtml(ex.query)}
+                </button>
+            `;
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+        }
+
+        // Show result for pre-computed example
+        window.showPrecomputedResult = function(query, score) {
+            document.getElementById('query-input').value = query;
+            displayResult(score);
+        };
+
+        // Display classification result
+        function displayResult(score) {
+            const container = document.getElementById('result-container');
+            const tag = document.getElementById('result-tag');
+            const label = document.getElementById('result-label');
+            const confidence = document.getElementById('result-confidence');
+            const bar = document.getElementById('confidence-bar');
+
+            const isQuestion = score > 0.5;
+            const confidencePercent = Math.round(Math.abs(score - 0.5) * 200);
+
+            container.classList.remove('hidden');
+
+            if (isQuestion) {
+                tag.className = 'px-3 py-1 rounded-full text-sm font-semibold question-tag';
+                tag.textContent = '🔍';
+                label.textContent = 'Natural Language Question';
+                label.className = 'text-xl font-semibold text-green-400';
+                bar.className = 'confidence-bar h-full bg-green-500';
+            } else {
+                tag.className = 'px-3 py-1 rounded-full text-sm font-semibold keyword-tag';
+                tag.textContent = '🏷️';
+                label.textContent = 'Keyword Search';
+                label.className = 'text-xl font-semibold text-indigo-400';
+                bar.className = 'confidence-bar h-full bg-indigo-500';
+            }
+
+            confidence.textContent = `${Math.round(score * 100)}% confidence`;
+            bar.style.width = `${score * 100}%`;
+        }
+
+        // Load full model for custom queries
+        window.loadFullModel = async function() {
+            if (modelLoading || modelLoaded) return;
+
+            modelLoading = true;
+            const statusText = document.getElementById('status-text');
+            const loadBtn = document.getElementById('load-model-btn');
+
+            statusText.textContent = 'Loading model (120MB)... This may take a moment.';
+            loadBtn.classList.add('hidden');
+
+            try {
+                // Dynamic import of Transformers.js
+                const { pipeline: pipelineFn } = await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.1');
+
+                statusText.textContent = 'Initializing embedding model...';
+
+                // Load the feature extraction pipeline
+                pipeline = await pipelineFn('feature-extraction', 'Xenova/paraphrase-multilingual-MiniLM-L12-v2', {
+                    quantized: true,
+                    progress_callback: (progress) => {
+                        if (progress.status === 'downloading') {
+                            const pct = Math.round((progress.loaded / progress.total) * 100);
+                            statusText.textContent = `Downloading model: ${pct}%`;
+                        }
+                    }
+                });
+
+                // Load classifier weights
+                const weightsResponse = await fetch('model_weights.json');
+                const weightsData = await weightsResponse.json();
+                modelWeights = weightsData.weights;
+                modelBias = weightsData.bias;
+
+                modelLoaded = true;
+                statusText.textContent = '✅ Model loaded! Enter any query to classify.';
+                statusText.className = 'mt-6 text-center text-sm text-green-400';
+
+            } catch (error) {
+                console.error('Failed to load model:', error);
+                statusText.textContent = '❌ Failed to load model. Using pre-computed examples only.';
+                loadBtn.classList.remove('hidden');
+                modelLoading = false;
+            }
+        };
+
+        // Classify custom query
+        window.classifyQuery = async function() {
+            const query = document.getElementById('query-input').value.trim();
+            if (!query) return;
+
+            // Check if query matches a pre-computed example
+            const allExamples = [...EXAMPLES.questions, ...EXAMPLES.keywords, ...EXAMPLES.multilingual];
+            const match = allExamples.find(ex => ex.query.toLowerCase() === query.toLowerCase());
+
+            if (match) {
+                displayResult(match.score);
+                return;
+            }
+
+            // Need full model for custom queries
+            if (!modelLoaded) {
+                if (!modelLoading) {
+                    document.getElementById('status-text').textContent = 'Loading model for custom queries...';
+                    await loadFullModel();
+                }
+                if (!modelLoaded) return;
+            }
+
+            // Show loading state
+            const btn = document.getElementById('classify-btn');
+            const btnText = document.getElementById('btn-text');
+            const spinner = document.getElementById('btn-spinner');
+
+            btn.disabled = true;
+            btnText.textContent = 'Classifying...';
+            spinner.classList.remove('hidden');
+
+            try {
+                // Generate embedding
+                const output = await pipeline(query, { pooling: 'mean', normalize: true });
+                const embedding = Array.from(output.data);
+
+                // Classify using dot product
+                let score = modelBias;
+                for (let i = 0; i < modelWeights.length; i++) {
+                    score += embedding[i] * modelWeights[i];
+                }
+
+                // Convert to probability using sigmoid
+                const probability = 1 / (1 + Math.exp(-score));
+
+                displayResult(probability);
+
+            } catch (error) {
+                console.error('Classification failed:', error);
+                document.getElementById('status-text').textContent = '❌ Classification failed: ' + error.message;
+            } finally {
+                btn.disabled = false;
+                btnText.textContent = 'Classify';
+                spinner.classList.add('hidden');
+            }
+        };
+
+        // Handle Enter key
+        document.getElementById('query-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') classifyQuery();
+        });
+
+        // Initialize on load
+        initExamples();
+    </script>
+</body>
+</html>
