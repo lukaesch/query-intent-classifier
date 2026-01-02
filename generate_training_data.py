@@ -220,6 +220,36 @@ KEYWORD_PATTERNS = [
     "\"{person}\"",
     "{topic} NOT {topic2}",
     "\"{topic}\" AND \"{topic2}\"",
+    # Short compound nouns - explicitly keywords
+    "{compound}",
+]
+
+# Compound noun phrases that are clearly keywords (not questions)
+COMPOUND_KEYWORDS = [
+    "bitcoin mining", "machine learning", "deep learning", "neural network",
+    "data science", "computer vision", "natural language", "speech recognition",
+    "self driving", "autonomous vehicles", "electric cars", "solar power",
+    "wind energy", "nuclear power", "quantum computing", "edge computing",
+    "cloud storage", "cyber security", "data privacy", "user experience",
+    "product design", "growth hacking", "content marketing", "email marketing",
+    "social media", "influencer marketing", "brand strategy", "market research",
+    "supply chain", "real estate", "private equity", "hedge fund",
+    "stock market", "bond market", "forex trading", "options trading",
+    "venture capital", "angel investing", "seed funding", "series A",
+    "artificial intelligence", "augmented reality", "virtual reality", "mixed reality",
+    "internet things", "smart home", "wearable technology", "fitness tracker",
+    "mental health", "physical therapy", "weight loss", "muscle building",
+    "healthy eating", "intermittent fasting", "keto diet", "vegan lifestyle",
+    "remote work", "digital nomad", "work life balance", "career development",
+    "personal branding", "public speaking", "leadership skills", "team management",
+    "project management", "agile methodology", "scrum master", "product owner",
+    "software engineering", "frontend development", "backend development", "full stack",
+    "mobile development", "iOS development", "Android development", "cross platform",
+    "web development", "responsive design", "user interface", "user research",
+    "A/B testing", "conversion optimization", "search engine", "paid advertising",
+    "podcast production", "video editing", "audio engineering", "music production",
+    "true crime", "comedy podcast", "news podcast", "interview podcast",
+    "tech news", "business news", "sports news", "entertainment news",
 ]
 
 # Topics for substitution
@@ -328,9 +358,14 @@ def generate_keywords(n=500):
         topic = random.choice(TOPICS + TOPICS_SHORT)
         topic2 = random.choice(TOPICS + TOPICS_SHORT)
         person = random.choice(PEOPLE)
+        compound = random.choice(COMPOUND_KEYWORDS)
 
-        query = pattern.format(topic=topic, topic2=topic2, person=person)
+        query = pattern.format(topic=topic, topic2=topic2, person=person, compound=compound)
         examples.append({"query": query, "label": "keyword", "lang": "en", "source": "synthetic"})
+
+    # Add all compound keywords explicitly
+    for compound in COMPOUND_KEYWORDS:
+        examples.append({"query": compound, "label": "keyword", "lang": "en", "source": "synthetic"})
 
     return examples
 
